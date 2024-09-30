@@ -1,0 +1,26 @@
+body{
+    background-color: purple;
+}
+h1{
+    color: white;
+}
+#board{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#board div{
+    box-sizing: border-box;
+    border: 3px purple solid;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 75%;
+    height: auto;
+ 
+}
