@@ -115,7 +115,34 @@ function gameOver(hasWon) {
     for (let i = 0; i < squares.length; i++)
         squares[i].removeEventListener("click", doTurn);
     console.log(hasWon);
-    if(hasWon == true)  console.log("circle won");
-    else if(hasWon == false)  console.log("x won");
-    else console.log("nobody won")
+    if(hasWon == true)  {
+        console.log("circle won");
+        let gameOverTitle=document.createElement("h1")
+        gameOverTitle.classList.add("gameover");
+        let child=document.createElement("h2")
+        child.innerHTML="O WON";
+        gameOverTitle.innerHTML="GAME OVER!"
+        gameOverTitle.appendChild(child);
+        board.replaceWith(gameOverTitle)
+    }
+    else if(hasWon == false) { 
+        console.log("x won");
+        let gameOverTitle=document.createElement("h1")
+        gameOverTitle.classList.add("gameover");
+        let child=document.createElement("h2")
+        child.innerHTML="X WON";
+        gameOverTitle.innerHTML="GAME OVER!"
+        gameOverTitle.appendChild(child);
+        board.replaceWith(gameOverTitle)} 
+    else{ 
+        console.log("nobody won")
+        let gameOverTitle=document.createElement("h1")
+        gameOverTitle.classList.add("gameover");
+        let child=document.createElement("h2")
+        child.innerHTML="TIE";
+        gameOverTitle.innerHTML="GAME OVER!"
+        gameOverTitle.appendChild(child);
+        console.log('gameOverTitle: ', gameOverTitle);
+        board.replaceWith(gameOverTitle)
+    }
 }

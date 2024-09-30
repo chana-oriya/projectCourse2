@@ -20,6 +20,7 @@ section{
 }
 
 #board{
+    position: relative;
     width: 500px;
     height: 500px;
     display: flex;
@@ -58,4 +59,8 @@ button{
 
 #start-game{
     margin: 5px;
+}
+.gameover{
+    text-align: center;
+    font-size: 90px;
 }
