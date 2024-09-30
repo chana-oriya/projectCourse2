@@ -2,13 +2,18 @@
     color: white;
 }
 body{
-    background-color: purple;
+    background-color: rgb(176, 127, 194);
 }
 header{
     display: flex;
     justify-content: center;
     align-items: center;   
     width: 100%;
+    font-size: 70px;
+    
+}
+header h1{
+    margin:0;
 }
 
 section{
@@ -17,18 +22,21 @@ section{
     justify-content: center;
     align-items: center;
     width: 100%;   
+   
 }
 
 #board{
     position: relative;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
+    padding:30px;
 }
 #board div{
     box-sizing: border-box;
-    border: 3px purple solid;
+    border: 3px black solid;*/
+    padding:30px;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -51,6 +59,7 @@ img{
 
 button{
     color: black;
+    font-size: 40px;;
 }
 
 #board-size h4{
