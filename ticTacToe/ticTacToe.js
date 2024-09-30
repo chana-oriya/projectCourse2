@@ -1,12 +1,20 @@
 (document.getElementById("start-game")).addEventListener("click", startGame);
+(document.getElementById("+")).addEventListener("click", () => {updateBoard((x)=>x+1)});
+(document.getElementById("-")).addEventListener("click", () => {updateBoard((x)=>x-1)});
 let turn= false; //x false, o true
-let board = document.getElementById("board");
-buildBoard(boardSizeX, boardSizeY);
-let squares = board.querySelectorAll("div");
-let squares2D = [];
 
+let board = document.getElementById("board");
+let squares2D = [];
+let squares;
+buildBoardGeneric();
+
+function buildBoardGeneric(){
+    buildBoard(boardSizeX, boardSizeY);
+}
 
 function buildBoard(boardSizeX, boardSizeY){
+    board.innerHTML = "";
+    console.log("cleared");
     for(let i = 0; i<boardSizeX*boardSizeY; i++){
         let square = document.createElement("div");
         square.style.width = 100/boardSizeX+ "%";
@@ -14,6 +22,20 @@ function buildBoard(boardSizeX, boardSizeY){
         
         board.appendChild(square);
     }
+    squares = board.querySelectorAll("div");
+
+
+    for(let i = 0; i<boardSizeX*boardSizeY; i++){
+        if(i%boardSizeX == 0)  squares2D.push([]);
+        (squares2D[Math.floor(i/boardSizeX)]).push(squares[i]); 
+        
+    }   
+}
+
+function updateBoard(update){
+    boardSizeX = update(boardSizeX);
+    boardSizeY = update(boardSizeY);
+    buildBoardGeneric();
 }
 
 function startGame(){
@@ -23,11 +45,7 @@ function startGame(){
         squares[i].setAttribute("status",undefined);
     }
 
-    for(let i = 0; i<boardSizeX*boardSizeY; i++){
-        if(i%boardSizeX == 0)  squares2D.push([]);
-        (squares2D[Math.floor(i/boardSizeX)]).push(squares[i]); 
-        
-    }
+   
     
 }
 
@@ -67,6 +85,7 @@ function hasWon(wasPlaced,maybeWon){
 }
 
 function hasWonSpecific(xCheck, yCheck, maybeWon, max){
+    console.log("check")
     for(let i=0; i<max; i++){
         if(squares2D[yCheck(i)][xCheck(i)].status != maybeWon) return false;
     }
@@ -75,7 +94,7 @@ function hasWonSpecific(xCheck, yCheck, maybeWon, max){
 
 function gameWon(winner){
     console.log("game won");
-    gameOver(true);
+    gameOver();
 }
 
 function gameOver(){

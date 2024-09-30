@@ -1,9 +1,24 @@
+*{
+    color: white;
+}
 body{
     background-color: purple;
 }
-h1{
-    color: white;
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    width: 100%;
 }
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;   
+}
+
 #board{
     width: 500px;
     height: 500px;
@@ -23,4 +38,16 @@ img{
     width: 75%;
     height: auto;
  
+}
+
+#board-size{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+button{
+    color: black;
 }
