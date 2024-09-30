@@ -51,3 +51,11 @@ img{
 button{
     color: black;
 }
+
+#board-size h4{
+    margin: 10px;
+}
+
+#start-game{
+    margin: 5px;
+}
