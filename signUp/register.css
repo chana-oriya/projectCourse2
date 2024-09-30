@@ -1,0 +1,55 @@
+
+
+header{
+width:100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 80px;
+    position: sticky;
+   
+    
+}
+header h1{
+    color:white;
+    width:60%;
+    font-size:70px;
+    text-align: center;
+    font-family: "Aclonica", sans-serif;
+    justify-content: center;
+    padding-left: 280px;
+    
+    }
+#logo{
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    padding-right:10px;
+    }
+form{
+  
+    border-radius: 20px;
+    border: 30px solid white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: white;
+    height: 600px;
+    width:20%;
+    font-size: 25px;
+    padding-bottom: 10px;
+   
+}
+form div{
+    display: flex;
+    flex-direction: column;
+}
+div{
+    padding:10px;
+    display:flex;
+    justify-content: center;
+
+}

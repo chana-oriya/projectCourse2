@@ -1,0 +1,70 @@
+
+body{
+    background-image:url("../img/blue.jpg");
+}
+
+header{
+width:100%;
+    display: flex;
+    justify-content: space-between;
+   padding-bottom: 60px;
+    position: sticky;
+   
+    
+}
+header h1{
+color:white;
+width:60%;
+font-size:70px;
+text-align: center;
+font-family: "Aclonica", sans-serif;
+
+}
+#logo{
+
+height: 100px;
+align-items: center;
+justify-content: center;
+padding-top: 5px;
+padding-right:10px;
+}
+#logIn{
+
+height: 180px;
+align-items: center;
+justify-content: center;
+padding-top: 55px;
+font-size:40px;
+font-family: "Gochi Hand", cursive;
+padding-top:10px; ;
+font-weight: bold;
+color:white;
+
+}
+
+#container{
+    padding-top: 200px;
+    display: flex;
+    flex-wrap:wrap;
+    padding:10px;
+    height:600px;
+    justify-content: center;
+    align-items: center;
+    border-top: 5px solid black;
+
+}
+#container img{
+  
+   margin:30px;
+    width:300px;
+    height: 280px;
+    border:5px solid white;
+    border-radius:270px;
+    transition: opacity 0.5s ease;
+}
+
+#container img:hover {
+opacity:25%;
+}
+
+
