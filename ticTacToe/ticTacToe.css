@@ -35,8 +35,7 @@ section{
 }
 #board div{
     box-sizing: border-box;
-    border: 3px black solid;*/
-    padding:30px;
+    border: 3px black solid;
     background-color: white;
     display: flex;
     justify-content: center;
