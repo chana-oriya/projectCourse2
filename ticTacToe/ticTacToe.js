@@ -1,6 +1,6 @@
 (document.getElementById("start-game")).addEventListener("click", startGame);
-(document.getElementById("+")).addEventListener("click", () => { updateBoard((x) => x + 1) });
-(document.getElementById("-")).addEventListener("click", () => { updateBoard((x) => x - 1) });
+(document.getElementById("+")).addEventListener("click", () => { updateBoardSize((x) => x + 1) });
+(document.getElementById("-")).addEventListener("click", () => { updateBoardSize((x) => x - 1) });
 let turn; //x false, o true
 let turnsNum;
 let board = document.getElementById("board");
@@ -14,7 +14,6 @@ function buildBoardGeneric() {
 
 function buildBoard(boardSizeX, boardSizeY) {
     board.innerHTML = "";
-    console.log("cleared");
     for (let i = 0; i < boardSizeX * boardSizeY; i++) {
         let square = document.createElement("div");
         square.style.width = 100 / boardSizeX + "%";
@@ -32,13 +31,14 @@ function buildBoard(boardSizeX, boardSizeY) {
     }
 }
 
-function updateBoard(update) {
+function updateBoardSize(update) {
     boardSizeX = update(boardSizeX);
     boardSizeY = update(boardSizeY);
     buildBoardGeneric();
 }
 
 function startGame() {
+    document.getElementById("start-game").style.display = "none";
     turn = false;
     for (let i = 0; i < squares.length; i++) {
         squares[i].addEventListener("click", doTurn);
@@ -50,23 +50,18 @@ function startGame() {
 function doTurn(event) {
     // atrubite values is always string, so we parse it
     const isAvailable = JSON.parse(event.target.getAttribute("status"))
-    if (isAvailable !== null) {
-        console.log("if !null ");
-        return;
-    }
+    if (isAvailable !== null) return;
+
     turnsNum++;
     event.target.setAttribute("status", turn);
-    // console.log("was clicked");
-    //console.log(event.target);
-
     if (turn) event.target.innerHTML = oImage;
     else event.target.innerHTML = xImage;
 
-    let winner = hasWon(findSquarePlace(event.target), turn);
-    if (winner){
+    if (hasWon(findSquarePlace(event.target), turn)){
         gameWon(turn);
         return;
     }
+    
     if(turnsNum == boardSizeX * boardSizeY){
         console.log("I'm here2");
         gameOver(null);
