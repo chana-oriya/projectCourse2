@@ -1,5 +1,5 @@
-const startButton = document.getElementById("start-game");
-(document.getElementById("start-game")).addEventListener("click", startGame);
+const controlGame = document.getElementById("controlGame");
+controlGame.addEventListener("click", startGame);
 (document.getElementById("+")).addEventListener("click", () => { updateBoardSize((x) => x + 1) });
 (document.getElementById("-")).addEventListener("click", () => { updateBoardSize((x) => x - 1) });
 let turn; //x false, o true
@@ -39,8 +39,11 @@ function updateBoardSize(update) {
 }
 
 function startGame() {
-    document.getElementById("start-game").textContent = "Reset Game";
-    
+    controlGame.textContent = "Reset Game";
+    controlGame.removeEventListener("click", startGame);
+    console.log("wow");
+    controlGame.addEventListener("click", ()=> window.location.reload());
+
     turn = false;
     for (let i = 0; i < squares.length; i++) {
         squares[i].addEventListener("click", doTurn);
