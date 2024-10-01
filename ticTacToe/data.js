@@ -1,5 +1,5 @@
- let xImage = "<img src = \"../images/x.jpeg\">"
-let oImage = "<img src = \"../images/o.jpeg\">"
+ let xImage = "<img src = \"../img/x.jpeg\">"
+let oImage = "<img src = \"../img/o.jpeg\">"
 let images = [xImage, oImage];
 
 let boardSizeX = 4;
