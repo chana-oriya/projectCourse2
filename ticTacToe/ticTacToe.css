@@ -1,21 +1,37 @@
-*{
-    color: white;
-}
+*
 body{
     background-color: rgb(176, 127, 194);
 }
 header{
+    width:100%;
     display: flex;
     justify-content: center;
-    align-items: center;   
-    width: 100%;
-    font-size: 70px;
+    padding-bottom: 10px;
+    position: sticky;
+   
+    
+
     
 }
 header h1{
-    margin:0;
-}
-
+    color:white;
+    width:60%;
+    font-size:100px;
+    text-align: center;
+    font-family: "Aclonica", sans-serif;
+    justify-content: center;
+    padding-left:-100px;
+   
+    
+    }
+#logo{
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding-top: 5px;
+    right:-600px;
+    }
 section{
     display: flex;
     flex-direction: column;
@@ -31,7 +47,6 @@ section{
     height: 600px;
     display: flex;
     flex-wrap: wrap;
-    padding:30px;
 }
 #board div{
     box-sizing: border-box;
