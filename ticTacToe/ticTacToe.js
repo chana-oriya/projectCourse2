@@ -77,7 +77,6 @@ function doTurn(event) {
     }
     
     if(turnsNum == boardSizeX * boardSizeY){
-        console.log("I'm here2");
         gameOver(null);
     }
     turn = !turn;
@@ -116,7 +115,6 @@ function hasWonSpecific(xCheck, yCheck, maybeWon, max) {
 }
 
 function gameWon(winner) {
-    console.log("game won");
     gameOver(winner);
 }
 
