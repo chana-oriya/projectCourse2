@@ -33,6 +33,11 @@ function buildBoard(boardSizeX, boardSizeY) {
 }
 
 function updateBoardSize(update) {
+    console.log("here");
+    controlGame.addEventListener("click", startGame);
+    controlGame.textContent = "start Game";
+    controlGame.removeEventListener("click", reload);
+
     boardSizeX = update(boardSizeX);
     boardSizeY = update(boardSizeY);
     buildBoardGeneric();
@@ -42,7 +47,7 @@ function startGame() {
     controlGame.textContent = "Reset Game";
     controlGame.removeEventListener("click", startGame);
     console.log("wow");
-    controlGame.addEventListener("click", ()=> window.location.reload());
+    controlGame.addEventListener("click", reload);
 
     turn = false;
     for (let i = 0; i < squares.length; i++) {
@@ -50,6 +55,10 @@ function startGame() {
         squares[i].setAttribute("status", null);
     }
     turnsNum = 0;
+}
+
+function reload(){
+    window.location.reload();
 }
 
 function doTurn(event) {
