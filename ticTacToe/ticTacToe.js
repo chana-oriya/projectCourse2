@@ -37,8 +37,9 @@ function updateBoardSize(update) {
     buildBoardGeneric();
 }
 
-function startGame() {
-    document.getElementById("start-game").style.display = "none";
+function startGame(event) {
+    makeResetGame(event.target);
+
     turn = false;
     for (let i = 0; i < squares.length; i++) {
         squares[i].addEventListener("click", doTurn);
@@ -47,6 +48,22 @@ function startGame() {
     turnsNum = 0;
 }
 
+function makeResetGame(button){
+    button.textContent = "Restart game";
+    button.removeEventListener("click", startGame);
+    button.addEventListener("click", restartGame);
+}
+
+function restartGame(button){
+    for (let i = 0; i < boardSizeY; i++){
+        for (let j = 0; j < boardSizeX; j++){
+            
+            squares2D[i][j].innerHTML = "";
+            squares2D[i][j].setAttribute("status",null);
+        }
+    }
+    button.addEventListener("click", startGame);
+}
 function doTurn(event) {
     // atrubite values is always string, so we parse it
     const isAvailable = JSON.parse(event.target.getAttribute("status"))
