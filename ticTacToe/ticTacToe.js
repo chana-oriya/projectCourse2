@@ -1,3 +1,4 @@
+const startButton = document.getElementById("start-game");
 (document.getElementById("start-game")).addEventListener("click", startGame);
 (document.getElementById("+")).addEventListener("click", () => { updateBoardSize((x) => x + 1) });
 (document.getElementById("-")).addEventListener("click", () => { updateBoardSize((x) => x - 1) });
@@ -38,7 +39,8 @@ function updateBoardSize(update) {
 }
 
 function startGame() {
-    document.getElementById("start-game").style.display = "none";
+    document.getElementById("start-game").textContent = "Reset Game";
+    
     turn = false;
     for (let i = 0; i < squares.length; i++) {
         squares[i].addEventListener("click", doTurn);
